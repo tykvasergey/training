@@ -3,4 +3,7 @@
     <event name="controller_action_predispatch_catalog_product_view">
         <observer name="training_test_redirect_to_login" instance="Training\Test\Observer\RedirectToLogin" />
     </event>
+    <event name="controller_front_send_response_before">
+        <observer name="training_test_log_page_html" instance="Training\Test\Observer\LogPageHtml" />
+    </event>
 </config>
