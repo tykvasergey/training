@@ -10,4 +10,14 @@
     <!--<type name="Magento\Catalog\Controller\Product\View">-->
         <!--<plugin name="training_test_controller_product_view" type="Training\Test\Plugin\Controller\Product\View" />-->
     <!--</type>-->
+    <type name="Magento\Framework\App\Router\NoRouteHandlerList">
+        <arguments>
+            <argument name="handlerClassesList" xsi:type="array">
+                <item name="default" xsi:type="array">
+                    <item name="class" xsi:type="string">Training\Test\Router\NoRouteHandler</item>
+                    <item name="sortOrder" xsi:type="string">100</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>
