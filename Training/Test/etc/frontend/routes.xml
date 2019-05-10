@@ -4,8 +4,11 @@
         <route id="test" frontName="test">
             <module name="Training_Test" />
         </route>
-        <route id="cms" frontName="cms">
-            <module name="Training_Test" before="Magento_Cms" />
+        <!--<route id="cms" frontName="cms">-->
+            <!--<module name="Training_Test" before="Magento_Cms" />-->
+        <!--</route>-->
+        <route id="catalog" frontName="catalog">
+            <module name="Training_Test" before="Magento_Catalog" />
         </route>
     </router>
 </config>
