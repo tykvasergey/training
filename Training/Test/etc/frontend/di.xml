@@ -20,4 +20,8 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Catalog\Block\Product\View\Description">
+        <plugin name="training_test_block_product_view_description"
+                type="Training\Test\Plugin\Block\Product\View\Description" sortOrder="10"/>
+    </type>
 </config>
