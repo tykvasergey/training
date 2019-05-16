@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Framework\App\FrontControllerInterface" type="Training\Test\Controller\App\FrontController"/>
-    <type name="Magento\Framework\UrlInterface">
-        <plugin name="training_test_model_url" type="Training\Test\Plugin\Model\Url" />
-    </type>
+    <!--<type name="Magento\Framework\UrlInterface">-->
+        <!--<plugin name="training_test_model_url" type="Training\Test\Plugin\Model\Url" />-->
+    <!--</type>-->
     <type name="Magento\Framework\View\Element\Template">
         <plugin name="training_test_block_template" type="Training\Test\Plugin\Block\Template" />
     </type>
