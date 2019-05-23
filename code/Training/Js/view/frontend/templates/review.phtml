@@ -1,0 +1,21 @@
+<div data-bind="scope: 'randomReview'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "randomReview": {
+                        "component": "Training_Js/js/review",
+                        "config": {
+                            "template": "Training_Js/review",
+                            "url": <?= json_encode($block->getUrl('randomreview/review/index')) ?>
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
