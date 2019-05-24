@@ -4,5 +4,8 @@
         <route id="randomreview" frontName="randomreview">
             <module name="Training_Js" />
         </route>
+        <route id="stockinfo" frontName="stockinfo">
+            <module name="Training_Js" />
+        </route>
     </router>
 </config>

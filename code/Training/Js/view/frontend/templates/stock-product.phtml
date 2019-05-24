@@ -1,0 +1,27 @@
+<?php
+    $product = $block->getProduct();
+    $productIsSimple = $product->getTypeId() == 'simple';
+?>
+<div id="ui_stock" data-bind="scope: 'getStock'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "getStock": {
+                        "component": "Training_Js/js/getStock",
+                        "config": {
+                            "template": "Training_Js/stock-product",
+                            "productId": <?= $product->getId(); ?>,
+                            "productIsSimple": <?= json_encode($productIsSimple); ?>,
+                            "url": <?= json_encode($block->getUrl('stockinfo/product/stock')) ?>
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>

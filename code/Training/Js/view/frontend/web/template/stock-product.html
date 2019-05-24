@@ -1,0 +1,12 @@
+<!-- ko if: isSimpleProduct() -->
+<div class="product-stock-qty" data-bind="blockLoader: isLoading">
+    <div class="action">
+        <button type="button" data-bind="i18n: 'Show available stock', click: getStock"></button>
+        <div class="stock-qty">
+            <!-- ko if: issetQty() -->
+            <span data-bind="text: qty()"/>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
+<!-- /ko -->
