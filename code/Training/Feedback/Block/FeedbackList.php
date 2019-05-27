@@ -24,6 +24,11 @@ class FeedbackList extends \Magento\Framework\View\Element\Template
     private $timezone;
 
     /**
+     * @var \Training\Feedback\Model\ResourceModel\Feedback
+     */
+    protected $feedbackResource;
+
+    /**
      * FeedbackList constructor.
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Training\Feedback\Model\ResourceModel\Feedback\CollectionFactory $collectionFactory
@@ -34,17 +39,19 @@ class FeedbackList extends \Magento\Framework\View\Element\Template
         \Magento\Framework\View\Element\Template\Context $context,
         \Training\Feedback\Model\ResourceModel\Feedback\CollectionFactory $collectionFactory,
         \Magento\Framework\Stdlib\DateTime\Timezone $timezone,
+        \Training\Feedback\Model\ResourceModel\Feedback $feedbackResource,
         array $data = array()
     ) {
         parent::__construct($context, $data);
         $this->collectionFactory = $collectionFactory;
         $this->timezone = $timezone;
+        $this->feedbackResource = $feedbackResource;
     }
 
     /**
      * @return mixed
      */
-    public function getFeedbackCollection()
+    public function getCollection()
     {
         if (!$this->collection) {
             $this->collection = $this->collectionFactory->create();
@@ -67,7 +74,7 @@ class FeedbackList extends \Magento\Framework\View\Element\Template
                 ->setShowPerPage(false)
                 ->setShowAmounts(false)
                 ->setLimit($this->getLimit())
-                ->setCollection($this->getFeedbackCollection());
+                ->setCollection($this->getCollection());
             return $pagerBlock->toHtml();
         }
         return '';
@@ -96,5 +103,21 @@ class FeedbackList extends \Magento\Framework\View\Element\Template
     public function getFeedbackDate($feedback)
     {
         return $this->timezone->formatDateTime($feedback->getCreationTime());
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAllFeedbackNumber()
+    {
+        return $this->feedbackResource->getAllFeedbackNumber();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActiveFeedbackNumber()
+    {
+        return $this->feedbackResource->getActiveFeedbackNumber();
     }
 }
