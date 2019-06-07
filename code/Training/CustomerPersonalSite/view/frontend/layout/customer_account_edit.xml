@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="content">
-            <block class="Magento\Customer\Block\Form\Edit" name="customer_edit" template="Training_CustomerPersonalSite::form/edit.phtml" cacheable="false">
-                <arguments>
-                    <argument name="viewModel" xsi:type="object">Training\CustomerPersonalSite\ViewModel\CustomerAttribute</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
+        <referenceBlock name="customer_edit" template="Training_CustomerPersonalSite::form/edit.phtml" cacheable="false">
+            <arguments>
+                <argument name="viewModel" xsi:type="object">Training\CustomerPersonalSite\ViewModel\CustomerAttribute</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>

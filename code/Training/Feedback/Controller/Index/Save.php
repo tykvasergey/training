@@ -2,6 +2,7 @@
 
 namespace Training\Feedback\Controller\Index;
 
+use Magento\Framework\Exception\LocalizedException;
 
 class Save extends \Magento\Framework\App\Action\Action
 {

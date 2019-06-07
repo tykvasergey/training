@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="content">
             <block class="Training\Feedback\Block\FeedbackList" name="feedback_list"
-                   template="Training_Feedback::list.phtml">
+                   template="Training_Feedback::list.phtml" cacheable="false">
                 <block class="Magento\Theme\Block\Html\Pager" name="feedback_list_pager"/>
             </block>
         </referenceContainer>
